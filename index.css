@@ -10,6 +10,10 @@ ul {
   list-style: none;
 }
 
+a {
+  cursor: pointer;
+}
+
 .nav {
   height: 113px;
   width: 100%;
@@ -29,6 +33,7 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
 }
 
 .nav__link img {
@@ -42,24 +47,99 @@ ul {
   display: -ms-flexbox;
   display: flex;
   color: #b6bcc8;
+  margin: 0;
   margin-left: 10px;
+  height: 100%;
 }
 
 .nav__link ul li {
   margin-right: 25px;
   position: relative;
+  line-height: 113px;
+  cursor: pointer;
 }
 
 .nav__link ul li::before {
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px;
-  bottom: 0;
+  height: 4px;
+  bottom: -2px;
   background-color: #ff7d1a;
+  visibility: hidden;
 }
 
 .nav__link ul li:hover {
   color: #68707d;
+}
+
+.nav__link ul li:hover::before {
+  visibility: visible;
+}
+
+.nav__account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__account--basket {
+  width: 50px;
+}
+
+.nav__account--activated {
+  display: block;
+  position: absolute;
+  top: 100px;
+  right: 10%;
+  width: 360px;
+  height: 250px;
+  -webkit-box-shadow: 0px 20px 50px -10px #00000080;
+          box-shadow: 0px 20px 50px -10px #00000080;
+  background: white;
+  border-radius: 10px;
+  -webkit-animation: cart 400ms;
+          animation: cart 400ms;
+}
+
+.nav__account--activated p {
+  font-weight: 700;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e8e7ec;
+}
+
+.nav__account--profil {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ff7d1a;
+  border-radius: 50px;
+}
+
+.nav__account--profil img {
+  height: 100%;
+}
+
+@-webkit-keyframes cart {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 250px;
+  }
+}
+
+@keyframes cart {
+  from {
+    height: 50px;
+  }
+  to {
+    height: 250px;
+  }
 }
 /*# sourceMappingURL=index.css.map */
