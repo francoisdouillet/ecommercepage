@@ -104,7 +104,38 @@ a {
 
 .main {
     margin: 0 auto;
+    margin-top: 90px;
     width: 1000px;
-    height: 500px;
-    border: 1px solid black;
+    height: 565px;
+    &__image {
+        width: 44.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &--selected {
+            width: 100%;
+            height: 78%;
+            background-image: url("./images/image-product-1.jpg");
+            background-size: 100%;
+            border-radius: 20px;
+        }
+        &--choose {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 15.5%;
+            & .showImage {
+                width: 20%;
+                height: 100%;
+                border-radius: 10px;
+                overflow: hidden;
+                box-sizing:border-box;
+                & img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
 }
