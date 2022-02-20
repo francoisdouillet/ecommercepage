@@ -6,22 +6,29 @@ showCart.style.display = "none"
 btnCart.onclick = function () {
   if (showCart.style.display == "none") {
     showCart.style.display = "block";
+    showCart.style.border = "1px solid red"
   } else  {
     showCart.style.display = "none";
   }
 };
 
+const image = document.querySelectorAll('.main__image--choose a')
+const imageBtn = [... image];
+let imageId = 1;
 
-const displayImage = document.getElementsByClassName('showImage')
-const image = document.getElementsByClassName('main__image--selected')
-const image1 = ["./images/image-product-1.jpg","./images/image-product-2.jpg","./images/image-product-3.jpg","./images/image-product-4.jpg"]
+imageBtn.forEach((imageItem) => {
+  imageItem.addEventListener('click', (event) => {
+    event.preventDefault();
+    imageId = imageItem.dataset.id;
+    document.querySelector('.active').classList.remove("active")
+    event.target.classList.add('active')
+    slideImage();
+  })
+})
 
-for ( i = 0 ; i < displayImage.length ; i++) {
-  displayImage[i].addEventListener("click", function() {
-    this.style.border = "2px solid hsl(26, 100%, 55%)"
-    image.style.backgroundImage = "url("${image1[i]}")"
-  });
+function slideImage() {
+  const displayWith = document.querySelector('.displayImage img:first-child').clientWidth;
+  document.querySelector('.displayImage').style.transform = `translateX(${- (imageId -1) * displayWith}px)`
 }
 
-
-
+window.addEventListener('resize', slideImage);
