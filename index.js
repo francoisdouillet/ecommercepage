@@ -1,16 +1,15 @@
 const showCart = document.getElementById("showCart");
 const btnCart = document.getElementById("btnCart");
 
-showCart.style.display = "none"
 
 btnCart.onclick = function () {
-  if (showCart.style.display == "none") {
-    showCart.style.display = "block";
-    showCart.style.border = "1px solid red"
+  if (showCart.style.transform == "scale(1)") {
+    showCart.style.transform = "scale(0)";
   } else  {
-    showCart.style.display = "none";
+    showCart.style.transform = "scale(1)";
   }
 };
+
 
 const image = document.querySelectorAll('.main__image--choose a')
 const imageBtn = [... image];
@@ -31,4 +30,22 @@ function slideImage() {
   document.querySelector('.displayImage').style.transform = `translateX(${- (imageId -1) * displayWith}px)`
 }
 
-window.addEventListener('resize', slideImage);
+document.getElementById('decrease').setAttribute('disabled', 'disabled')
+
+document.getElementById('increase').addEventListener("click", function(){
+  let valueInput = document.getElementById('quantity').value;
+  valueInput++;
+  document.getElementById('quantity').value = valueInput;
+  if(valueInput > 1){
+    document.getElementById('decrease').removeAttribute('disabled', 'disabled')
+  }
+})
+
+document.getElementById('decrease').addEventListener("click", function(){
+  let valueInput = document.getElementById('quantity').value;
+  valueInput--;
+  document.getElementById('quantity').value = valueInput;
+  if(valueInput == 1){
+    document.getElementById('decrease').setAttribute('disabled', 'disabled')
+  }
+})

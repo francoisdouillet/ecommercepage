@@ -7,7 +7,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="index.css">
   <title>Frontend Mentor | E-commerce product page</title>
-
 <body>
   <nav class="nav">
     <div class="nav__link">
@@ -39,18 +38,28 @@
         </div>
       </div>
       <div class="main__image--choose">
-        <a class="showImage active" data-id="1">
-          <!--<img src="./images/image-product-1-thumbnail.jpg">-->
-        </a>
-        <a class="showImage" data-id="2">
-          <!--<img src="./images/image-product-2-thumbnail.jpg">-->
-        </a>
-        <a class="showImage" data-id="3">
-          <!--<img src="./images/image-product-3-thumbnail.jpg">-->
-        </a>
-        <a class="showImage" data-id="4">
-          <!--<img src="./images/image-product-4-thumbnail.jpg">-->
-        </a>
+        <a class="showImage active" data-id="1"></a>
+        <a class="showImage" data-id="2"></a>
+        <a class="showImage" data-id="3"></a>
+        <a class="showImage" data-id="4"></a>
+      </div>
+    </div>
+    <div class="main__text">
+      <h1>SNEAKER COMPANY</p>
+      <h2>Fall Limited Edition Sneakers</h2>
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+      <div class="main__text--price">
+        <p>$125.00</p>
+        <p class="reduction">50%</p>
+      </div>
+      <p class="main__text--lastprice">$250</p>
+      <div class="main__text--cart">
+        <div class="quantity">
+          <button id="decrease">-</button>
+          <input id="quantity" type="text" value="1">
+          <button id="increase">+</button>
+        </div>
+        <button class="cart">Add to cart</button>
       </div>
     </div>
   </main>
