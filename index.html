@@ -22,7 +22,7 @@
     <div class="nav__account">
       <a class="nav__account--basket" id="btnCart"><img src="images/icon-cart.svg"></a>
       <div class="nav__account--activated" id="showCart">
-        <p>Cart</p>
+        <p class="titleCart">Cart</p>
       </div>
       <a class="nav__account--profil"><img src="images/image-avatar.png"></a>
     </div>
@@ -31,7 +31,7 @@
     <div class="main__image">
       <div class="main__image--selected" >
         <div class="displayImage">
-          <img src="./images/image-product-1.jpg">
+          <img id="imageProduct" src="./images/image-product-1.jpg">
           <img src="./images/image-product-2.jpg">
           <img src="./images/image-product-3.jpg">
           <img src="./images/image-product-4.jpg">
@@ -46,10 +46,10 @@
     </div>
     <div class="main__text">
       <h1>SNEAKER COMPANY</p>
-      <h2>Fall Limited Edition Sneakers</h2>
+      <h2 id="titleProduct">Fall Limited Edition Sneakers</h2>
       <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
       <div class="main__text--price">
-        <p>$125.00</p>
+        <p id="priceProduct">$125.00</p>
         <p class="reduction">50%</p>
       </div>
       <p class="main__text--lastprice">$250</p>
@@ -59,7 +59,7 @@
           <input id="quantity" type="text" value="1">
           <button id="increase">+</button>
         </div>
-        <button class="cart">Add to cart</button>
+        <button class="cart" id="cart">Add to cart</button>
       </div>
     </div>
   </main>
