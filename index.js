@@ -18,10 +18,10 @@ let imageId = 1;
 imageBtn.forEach((imageItem) => {
   imageItem.addEventListener("click", (event) => {
     event.preventDefault();
-    imageId = imageItem.dataset.id;
-    document.querySelector(".active").classList.remove("active");
-    event.target.classList.add("active");
-    slideImage();
+      imageId = imageItem.dataset.id;
+      document.querySelector(".active").classList.remove("active");
+      event.target.classList.add("active");
+      slideImage();
   });
 });
 
@@ -33,6 +33,8 @@ function slideImage() {
     -(imageId - 1) * displayWith
   }px)`;
 }
+
+/* SLIDER IMAGE MOBILE */
 
 /* Quantity increase decrease */
 
@@ -58,6 +60,14 @@ document.getElementById("decrease").addEventListener("click", function () {
 
 /* Add to basket */
 
+/* empty cart */
+const emptyCart = document.createElement('div')
+emptyCart.classList.add('emptyCart')
+emptyCart.innerHTML = `<p>Your cart is empty<p>`
+showCart.appendChild(emptyCart)
+
+
+/* onclick*/
 const buttonCart = document.getElementById("cart");
 
 buttonCart.addEventListener("click", function () {
@@ -72,6 +82,7 @@ buttonCart.addEventListener("click", function () {
   const price = parseInt(priceReplace, 10);
   const quantity = parseInt(objectBasket.quantity, 10);
   const total = quantity * price;
+  showCart.removeChild(emptyCart)
 
   const div = document.createElement("div");
   div.classList.add("cartHeader");
@@ -84,3 +95,22 @@ buttonCart.addEventListener("click", function () {
 </div><button>Checkout</button>`;
   showCart.appendChild(div);
 });
+
+/* MENU BURGER */
+
+const burger = document.querySelector('.nav__burger')
+const burger1 = document.querySelector('.nav__burger div:nth-child(1)')
+const burger2 = document.querySelector('.nav__burger div:nth-child(2)')
+const burger3 = document.querySelector('.nav__burger div:nth-child(3)')
+
+burger.addEventListener('click', function() {
+  const menu = document.querySelector('.nav__link ul')
+  if (menu.style.transform == "translateX(0px)") {
+    menu.style.transform = "translateX(-100%)"
+  } else {
+    menu.style.transform = "translateX(0px)"
+  }
+  burger1.classList.toggle('burger1')
+  burger2.classList.toggle('burgerNone')
+  burger3.classList.toggle('burger2')
+})
