@@ -26,15 +26,36 @@ imageBtn.forEach((imageItem) => {
 });
 
 function slideImage() {
-  const displayWith = document.querySelector(
+  const displayWidth = document.querySelector(
     ".displayImage img:first-child"
   ).clientWidth;
   document.querySelector(".displayImage").style.transform = `translateX(${
-    -(imageId - 1) * displayWith
+    -(imageId - 1) * displayWidth
   }px)`;
 }
 
 /* SLIDER IMAGE MOBILE */
+
+const nextBtn = document.querySelector('.main__arrow--right')
+const previousBtn = document.querySelector('.main__arrow--left')
+let nombre = 1
+
+nextBtn.addEventListener('click', function(){
+  document.querySelector(".displayImage").style.transform = `translateX(${ -100 * nombre }vw)`;
+  if (nombre < 3){
+    nombre++
+  }
+})
+
+previousBtn.addEventListener('click', function() {
+  document.querySelector(".displayImage").style.transform = `translateX(${ -100 * (nombre -1) }vw)`;
+  if (nombre !== 1) {
+    nombre--
+  }
+})
+
+
+
 
 /* Quantity increase decrease */
 
